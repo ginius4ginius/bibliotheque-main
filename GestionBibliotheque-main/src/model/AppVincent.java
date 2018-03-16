@@ -34,26 +34,13 @@ public class AppVincent {
 	}
 
 	public boolean ifNotExisit(Genre genre) {
-		boolean result = false;
-		List<Genre> liste = lesgenresbean.rechercheUnGenre(genre);
-
-		if (liste.size() == 0) {
-			result = true;
-		}
-
-		return result;
+		return lesgenresbean.rechercheUnGenre(genre);
 	}
 
 	public boolean ifNotExisit(Pret p) {
-		boolean result = false;
-		List<Pret> liste = lespretsbean.rechercheUnPret(p);
-
-		if (liste.size() == 0) {
-			result = true;
-		}
-
-		return result;
+		return lespretsbean.rechercheUnPret(p);
 	}
+	
 	///////////////////////// FONCTIONS ADD///////////////////////////
 
 	public Livre addLivre(Livre l) {
