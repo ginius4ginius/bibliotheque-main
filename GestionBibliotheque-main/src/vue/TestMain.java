@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 import model.Adherent;
+import model.AppMai;
 import model.AppVincent;
 import model.Auteur;
 import model.Editeur;
@@ -16,23 +17,27 @@ public class TestMain {
 	public static void main(String[] args) {
 		
 	AppVincent managerVincent = new AppVincent();
+	AppMai managerMai = new AppMai();
 	LocalDate datePret = LocalDate.now();
 	Date date = new Date(24 * 3600 * 1000 * datePret.toEpochDay());
 	
 	//instanciation des éléments:
 	
 	Auteur aut1 = new Auteur("EDITEUR", "editeur", "Français", 0);
-	Editeur ed1 = new Editeur("EDITEUR", "code postal", "adresse rue", "adresse ville");
-	Genre g2 = new Genre("test");
+	Editeur ed1 = 
+	Genre g1 = new Genre("Ecchi");
 	Livre l1 = new Livre("2-07-038692-6", "Java pour les nuls", "Français", 80f, (short)2018, aut1,g2,ed1);
 	Adherent a1 = new Adherent("Derieu","Vincent", "0631618521","ginius4@hotmail.com",93470, "3 rue des grands champs", "Coubron");
 	
 	Pret p1 = new Pret(l1,a1,date);
 	
 	System.out.println("");
-	managerVincent.addGenre(g2);
-	
+	managerVincent.addGenre(g1);
 	managerVincent.affichageDesGenres();
+	
+	System.out.println("");
+	managerMai.addAdherent(a1);
+	managerMai.
 	
 	System.out.println("");
 	managerVincent.addLivre(l1);
