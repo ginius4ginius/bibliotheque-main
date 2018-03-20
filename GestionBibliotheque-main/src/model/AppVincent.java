@@ -29,31 +29,31 @@ public class AppVincent {
 		}
 	}
 
-	public boolean ifNotExisit(Livre l) {
+	public boolean ifExist(Livre l) {
 		return leslivresbean.rechercheUnLivre(l);
 	}
 
-	public boolean ifNotExisit(Genre genre) {
+	public boolean ifExist(Genre genre) {
 		return lesgenresbean.rechercheUnGenre(genre);
 	}
 
-	public boolean ifNotExisit(Pret p) {
+	public boolean ifExist(Pret p) {
 		return lespretsbean.rechercheUnPret(p);
 	}
 	
 	///////////////////////// FONCTIONS ADD///////////////////////////
 
-	public Livre addLivre(Livre l) {
-		if (ifNotExisit(l)) {
-			Livre livre = leslivresbean.persistLivre(l);
-			return livre;
+	public Livre addLivre(Livre livre) {
+		if (!ifExist(livre)) {
+			Livre livr = leslivresbean.persistLivre(livre);
+			return livr;
 		}
 
-		return l;
+		return livre;
 	}
 
 	public Genre addGenre(Genre g) {
-		if (ifNotExisit(g)) {
+		if (!ifExist(g)) {
 			Genre genre = lesgenresbean.persistGenre(g);
 			return genre;
 		}
@@ -61,9 +61,9 @@ public class AppVincent {
 		return g;
 	}
 
-	public Pret addPret(Pret p, Livre l, Adherent a) {
-		if (ifNotExisit(p)) {
-			Pret pret = lespretsbean.persistPret(p, l, a);
+	public Pret addPret(Pret p) {
+		if (!ifExist(p)) {
+			Pret pret = lespretsbean.persistPret(p);
 			return pret;
 		}
 
@@ -73,7 +73,7 @@ public class AppVincent {
 	///////////////////////// FONCTIONS REMOVE///////////////////////////
 
 	public boolean removeLivre(Livre l) {
-		if (ifNotExisit(l)) {
+		if (ifExist(l)) {
 			leslivresbean.removeLivre(l);
 			return true;
 		}
@@ -82,7 +82,7 @@ public class AppVincent {
 	}
 
 	public boolean removeGenre(Genre g) {
-		if (ifNotExisit(g)) {
+		if (ifExist(g)) {
 			lesgenresbean.removeGenre(g);
 			return true;
 		}
@@ -91,7 +91,7 @@ public class AppVincent {
 	}
 
 	public boolean removePret(Pret p) {
-		if (ifNotExisit(p)) {
+		if (ifExist(p)) {
 			lespretsbean.removePret(p);
 			return true;
 		}

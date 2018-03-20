@@ -12,7 +12,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/crif/Desktop/glassfish-4.1.2/glassfish4/glassfish/lib/gf-client.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/GestionBibliotheque-ejb"/>
-	<classpathentry kind="lib" path="C:/Program Files/glassfish/glassfish4/glassfish/lib/gf-client.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
