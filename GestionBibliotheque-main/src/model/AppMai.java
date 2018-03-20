@@ -30,13 +30,13 @@ public class AppMai {
 	
 	///////////////----- ADHERENTS----/////////////////
 	// 
-	public boolean ifNotExist(Adherent adh) {
+	public boolean ifExist(Adherent adh) {
 		return lesadherentsbean.rechercherAdherent(adh);
 	}
 	
 	// ADD
 	public boolean addAdherent(Adherent adh) {
-		if (ifNotExist(adh)) {
+		if (!ifExist(adh)) {
 			lesadherentsbean.persistAdherent(adh);
 			return true;
 		}
@@ -46,7 +46,7 @@ public class AppMai {
 	
 	// REMOVE
 	public boolean removeAdherent(Adherent adh) {
-		if(ifNotExist(adh)) {
+		if(!ifExist(adh)) {
 			lesadherentsbean.removeAdherent(adh);
 			return true;
 		}
@@ -59,7 +59,7 @@ public class AppMai {
 		int adrCP = 0;
 		String adrVille = "";
 		
-		if(ifNotExist(adh)) {
+		if(!ifExist(adh)) {
 			lesadherentsbean.updateAdherentAdr(adh, adrRue, adrCP, adrVille);
 			return true;
 		}
@@ -77,7 +77,22 @@ public class AppMai {
 		}
 	}
 	
-	// LIST Auteurs
+	/////////------Auteurs------////
+	public boolean ifExist(Auteur auteur) {
+		return lesauteursbean.rechercherUnAuteur(auteur);
+	}
+	
+	// ADD
+	public boolean addAuteur(Auteur auteur) {
+		if (!ifExist(auteur)) {
+			lesauteursbean.persistAuteur(auteur);
+			return true;
+		}
+		return false;
+			
+	}	
+	
+	// LIST
 	public void affichageAuteurs() {
 		System.out.println("");
 		System.out.println("liste des auteurs : ");
@@ -88,8 +103,21 @@ public class AppMai {
 		}
 	}
 	
-	// LIST Editeurs
+	//////////-------Editeurs---------////////
+	public boolean ifExist(Editeur edit) {
+		return lesediteursbean.rechercherUnEditeur(edit);
+	}
+	// ADD
+	public boolean addEditeur(Editeur edit) {
+		if (!ifExist(edit)) {
+			lesediteursbean.persistEditeur(edit);
+			return true;
+		}
+		return false;
+			
+	}	
 	
+	// LIST
 	public void affichageEditeurs() {
 		System.out.println("");
 		System.out.println("liste des éditeurs : ");
