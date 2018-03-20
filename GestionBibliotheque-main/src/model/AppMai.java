@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -65,6 +67,36 @@ public class AppMai {
 	}
 	
 	// LIST Adhérents
+	public void affichageAdherents() {
+		System.out.println("");
+		System.out.println("liste des adhérents : ");
+		System.out.println("********************************");
+		List<Adherent> listeAdh = lesadherentsbean.getAdherentFindAll();
+		for(Adherent unAdh:listeAdh) {
+			System.out.println(unAdh.getNum()+" "+unAdh.getNom()+" "+unAdh.getPrenom()+" "+" "+unAdh.getAdrRue()+" "+unAdh.getAdrCP()+" "+unAdh.getAdrVille());
+		}
+	}
 	
+	// LIST Auteurs
+	public void affichageAuteurs() {
+		System.out.println("");
+		System.out.println("liste des auteurs : ");
+		System.out.println("********************************");
+		List<Auteur> listeAuteur = lesauteursbean.getAuteurFindAll();
+		for(Auteur unAuteur:listeAuteur) {
+			System.out.println(unAuteur.getNum()+" "+unAuteur.getNom()+" "+unAuteur.getPrenom()+" "+" "+unAuteur.getNationalite());
+		}
+	}
 	
+	// LIST Editeurs
+	
+	public void affichageEditeurs() {
+		System.out.println("");
+		System.out.println("liste des éditeurs : ");
+		System.out.println("********************************");
+		List<Editeur> listeEdit = lesediteursbean.getEditeurFindAll();
+		for(Editeur unEdit:listeEdit) {
+			System.out.println(unEdit.getNum()+" "+unEdit.getNom());
+		}
+	}
 }

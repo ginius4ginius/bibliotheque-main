@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/GestionBibliotheque-ejb"/>
-	<classpathentry kind="lib" path="C:/Program Files/glassfish/glassfish4/glassfish/lib/gf-client.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="oracle.eclipse.tools.glassfish.lib.system">
 		<attributes>
@@ -14,5 +12,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/crif/Desktop/glassfish-4.1.2/glassfish4/glassfish/lib/gf-client.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GestionBibliotheque-ejb"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
