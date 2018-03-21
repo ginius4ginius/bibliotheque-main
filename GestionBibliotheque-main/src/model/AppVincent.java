@@ -43,31 +43,35 @@ public class AppVincent {
 	
 	///////////////////////// FONCTIONS ADD///////////////////////////
 
-	public Livre addLivre(Livre livre) {
+	public boolean addLivre(Livre livre) {
+		boolean result = false;
 		if (!ifExist(livre)) {
 			Livre livr = leslivresbean.persistLivre(livre);
-			return livr;
+			result = true;
 		}
 
-		return livre;
+		return result;
 	}
 
 	public Genre addGenre(Genre g) {
+		//boolean result = false;
+		Genre unGenre = null;
 		if (!ifExist(g)) {
-			Genre genre = lesgenresbean.persistGenre(g);
-			return genre;
+			unGenre = lesgenresbean.persistGenre(g);
+			
+			//result = true;
 		}
-
-		return g;
+		return unGenre;
 	}
 
-	public Pret addPret(Pret p) {
+	public boolean addPret(Pret p) {
+		boolean result = false;
 		if (!ifExist(p)) {
 			Pret pret = lespretsbean.persistPret(p);
-			return pret;
+			result = true;
 		}
 
-		return p;
+		return result;
 	}
 
 	///////////////////////// FONCTIONS REMOVE///////////////////////////
@@ -173,6 +177,12 @@ public class AppVincent {
 					+ unPret.getDateRetourPrevue();
 			System.out.println(param);
 		}
+	}
+	
+	public Genre rechercheGenreParId(Genre genre) {
+		Genre leGenre = lesgenresbean.rechercheUnGenreId(genre);
+				
+				return leGenre;
 	}
 
 }
